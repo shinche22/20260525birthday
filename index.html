@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
     margin:0;
-    background:#fff7f8;
-    overflow-x:hidden;
-    font-family:'Cormorant Garamond', serif;
-    color:#5a4a4a;
-    text-align:center;
+    overflow:hidden;
+    font-family:'Gaegu', cursive;
+    background:
+    linear-gradient(to bottom,#0d1b3d 0%,#27496d 45%,#4fb0c6 70%,#8ed6e8 100%);
+    height:100vh;
+    color:white;
+}
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:50px 50px;
+    opacity:0.6;
 }
 
 .container{
-    min-height:100vh;
+    position:relative;
+    z-index:2;
+    height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:40px 20px 80px;
+    text-align:center;
+    padding:20px;
     box-sizing:border-box;
 }
 
 h1{
-    font-size:64px;
-    margin-bottom:10px;
-    font-family:'Great Vibes', cursive;
-    font-weight:400;
+    font-size:68px;
+    margin:0;
+    font-family:'Patrick Hand', cursive;
+    letter-spacing:2px;
 }
 
 .subtitle{
-    font-size:20px;
+    margin-top:10px;
+    font-size:28px;
     letter-spacing:3px;
-    margin-bottom:50px;
 }
 
 .cake{
-    position:relative;
-    margin:40px 0;
+    margin-top:40px;
 }
 
 .candle{
     width:14px;
     height:90px;
-    background:#fff;
+    background:#fff8dc;
     border-radius:10px;
     position:relative;
     margin:auto;
@@ -60,62 +73,51 @@ h1{
 .flame{
     width:24px;
     height:24px;
-    background:orange;
+    background:#ffcb42;
     border-radius:50%;
     position:absolute;
-    top:-25px;
+    top:-24px;
     left:-5px;
-    box-shadow:0 0 20px orange;
+    box-shadow:0 0 20px #ffd56b;
     animation:flicker 1s infinite;
 }
 
 @keyframes flicker{
     0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
+    50%{transform:scale(1.15);}
     100%{transform:scale(1);}
 }
 
 button{
+    margin-top:28px;
     border:none;
-    background:#e7c7cb;
-    color:#fff;
-    padding:12px 26px;
+    background:#ffffffcc;
+    color:#255070;
+    padding:12px 28px;
     border-radius:999px;
-    cursor:pointer;
-    font-size:16px;
-    letter-spacing:1px;
-    margin-top:20px;
-    transition:0.3s;
-    font-family:'Cormorant Garamond', serif;
-}
-
-button:hover{
-    transform:scale(1.05);
+    font-size:22px;
+    font-family:'Gaegu', cursive;
 }
 
 #wish{
-    margin-top:30px;
-    font-size:28px;
-    letter-spacing:3px;
     opacity:0;
+    margin-top:25px;
+    font-size:34px;
     transition:1s;
 }
 
 .typewriter{
-    margin-top:60px;
-    width:90%;
-    max-width:700px;
+    margin-top:40px;
     min-height:60px;
-    font-size:24px;
+    font-size:30px;
     letter-spacing:2px;
-    line-height:1.8;
 }
 
 .icons{
-    margin-top:60px;
+    margin-top:50px;
     display:flex;
-    gap:30px;
-    font-size:38px;
+    gap:40px;
+    font-size:52px;
 }
 
 .icons a{
@@ -124,36 +126,53 @@ button:hover{
 }
 
 .icons a:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px) scale(1.08);
 }
 
-#continueBtn{
-    display:none;
+.wave{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:160px;
+    background:#4fb0c6;
+    border-radius:100% 100% 0 0;
 }
 
-#message{
-    margin-top:40px;
-    max-width:800px;
-    line-height:2;
-    font-size:22px;
-    white-space:pre-line;
-    padding:0 10px 120px;
-    box-sizing:border-box;
+.mountain{
+    position:absolute;
+    bottom:100px;
+    width:0;
+    height:0;
+    border-left:140px solid transparent;
+    border-right:140px solid transparent;
+    border-bottom:220px solid #2d5d4f;
+    left:8%;
+    opacity:0.85;
 }
 
-.fade{
-    animation:fadeIn 1.5s forwards;
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+.mountain2{
+    position:absolute;
+    bottom:120px;
+    width:0;
+    height:0;
+    border-left:180px solid transparent;
+    border-right:180px solid transparent;
+    border-bottom:260px solid #3f7a66;
+    right:5%;
+    opacity:0.8;
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="stars"></div>
+
+<div class="mountain"></div>
+<div class="mountain2"></div>
+
+<div class="wave"></div>
 
 <div class="container">
 
@@ -162,34 +181,34 @@ button:hover{
 <div class="subtitle">MAKE A WISH</div>
 
 <div class="cake">
-    <div class="candle">
-        <div class="flame" id="flame"></div>
-    </div>
+<div class="candle">
+<div class="flame" id="flame"></div>
+</div>
 </div>
 
-<button onclick="blowCandle()">blow the candle</button>
+<button onclick="blowCandle()">
+blow the candle
+</button>
 
 <div id="wish">wish fulfilled ✨</div>
 
-<div class="typewriter" id="typing1"></div>
+<div class="typewriter" id="typing"></div>
 
 <div class="icons">
-    <a href="https://www.instagram.com/reel/DWqtMLfAIy0/?igsh=NWs3ZmU4OG5rbGdn" target="_blank">💗</a>
 
-    <a href="https://www.google.com/search?q=生命靈數流年4課題" target="_blank">🎀</a>
+<a href="https://www.instagram.com/reel/DWqtMLfAIy0/?igsh=NWs3ZmU4OG5rbGdn" target="_blank">
+⛰️
+</a>
 
-    <a href="#messageSection">🍒</a>
+<a href="https://www.google.com/search?q=生命靈數流年4課題" target="_blank">
+🌊
+</a>
+
+<a href="message.html">
+🏄‍♀️
+</a>
+
 </div>
-
-<div class="typewriter" id="typing2"></div>
-
-<button id="continueBtn" onclick="showMessage()">
-click to continue
-</button>
-
-<div id="messageSection"></div>
-
-<div id="message"></div>
 
 </div>
 
@@ -197,73 +216,39 @@ click to continue
 
 function blowCandle(){
 
-    document.getElementById("flame").style.display="none";
+document.getElementById("flame").style.display="none";
 
-    const wish=document.getElementById("wish");
+document.getElementById("wish").style.opacity="1";
 
-    wish.style.opacity="1";
+typeText(
+"TODAY IS YOUR DAY…",
+"typing",
+90
+);
 
-    typeText(
-        "TODAY IS YOUR DAY…",
-        "typing1",
-        90,
-        () => {
-            setTimeout(() => {
-                typeText(
-                    "WHAT I WANT TO SAY IS…",
-                    "typing2",
-                    90,
-                    () => {
-                        document.getElementById("continueBtn").style.display="inline-block";
-                    }
-                )
-            },800)
-        }
-    );
 }
 
-function typeText(text,id,speed,callback){
+function typeText(text,id,speed){
 
-    let i=0;
+let i=0;
 
-    const target=document.getElementById(id);
+const target=document.getElementById(id);
 
-    target.innerHTML="";
+function typing(){
 
-    function typing(){
+if(i<text.length){
 
-        if(i<text.length){
+target.innerHTML += text.charAt(i);
 
-            target.innerHTML += text.charAt(i);
+i++;
 
-            i++;
+setTimeout(typing,speed);
 
-            setTimeout(typing,speed);
-
-        }else{
-            if(callback) callback();
-        }
-    }
-
-    typing();
 }
 
-function showMessage(){
+}
 
-document.getElementById("message").classList.add("fade");
-
-document.getElementById("message").innerText = `
-
-我對於我今年的卡片真的太滿意了！！我之前一直很懶得研究ai，現在覺得一定要跟上ai浪潮欸XD
-
-但或許你每天在台東看天看海的人生遠離這些還是可以過的很快樂！我今年頻繁的因為工作壓力大出國玩，但後來發現其實人生追求的不過是安穩的生活即可！能在台東每天被山海包圍，想必幸福到不行！你真的是好早就領悟到要如何鬆散又幸福的生活，容我叫你一聲大師！！
-
-37歲了我們離不惑之年也越來越近了，但希望我們也還是能繼續享受最後幾年一些有惑的過程，有時候過程也是必要的，解惑之後回想起來也會更有趣，下次有上台北再相約喔！！生日快樂！！一切平安健康！啾啾
-
-`;
-
-document.getElementById("message")
-.scrollIntoView({behavior:"smooth"});
+typing();
 
 }
 
