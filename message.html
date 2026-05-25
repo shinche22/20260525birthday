@@ -6,68 +6,28 @@
 
 <title>Message</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
 
 body{
 margin:0;
-padding:0;
-font-family:'Gaegu', cursive;
-background:
-linear-gradient(to bottom,#0d1b3d 0%,#27496d 45%,#4fb0c6 70%,#8ed6e8 100%);
-color:white;
-min-height:100vh;
-overflow-x:hidden;
+background:url('message.png') center center/cover no-repeat;
+height:100vh;
+overflow:hidden;
 }
 
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px, transparent 1px);
-background-size:50px 50px;
-opacity:0.6;
-z-index:0;
-}
-
-.container{
-position:relative;
-z-index:2;
-padding:100px 24px 140px;
-text-align:center;
-}
-
-.typewriter{
-font-size:38px;
-line-height:1.8;
-min-height:80px;
+.button-area{
+position:absolute;
+top:36%;
+left:50%;
+transform:translateX(-50%);
 }
 
 button{
-margin-top:40px;
 border:none;
-background:#ffffffcc;
-color:#255070;
-padding:14px 34px;
-border-radius:999px;
-font-size:24px;
-font-family:'Gaegu', cursive;
-}
-
-#message{
-margin-top:60px;
-font-size:28px;
-line-height:2;
-white-space:pre-line;
-opacity:0;
-transition:1.5s;
-}
-
-.fade{
-opacity:1 !important;
+background:transparent;
+width:340px;
+height:90px;
+cursor:pointer;
 }
 
 </style>
@@ -75,72 +35,17 @@ opacity:1 !important;
 
 <body>
 
-<div class="stars"></div>
+<div class="button-area">
 
-<div class="container">
-
-<div class="typewriter" id="typing"></div>
-
-<button id="continueBtn" style="display:none;" onclick="showMessage()">
-click to continue
-</button>
-
-<div id="message"></div>
+<button onclick="goLetter()"></button>
 
 </div>
 
 <script>
 
-typeText(
-"WHAT I WANT TO SAY IS…",
-"typing",
-90,
-() => {
-document.getElementById("continueBtn").style.display="inline-block";
-}
-);
+function goLetter(){
 
-function typeText(text,id,speed,callback){
-
-let i=0;
-
-const target=document.getElementById(id);
-
-function typing(){
-
-if(i<text.length){
-
-target.innerHTML += text.charAt(i);
-
-i++;
-
-setTimeout(typing,speed);
-
-}else{
-if(callback) callback();
-}
-
-}
-
-typing();
-
-}
-
-function showMessage(){
-
-const msg=document.getElementById("message");
-
-msg.innerText = `
-
-我對於我今年的卡片真的太滿意了！！我之前一直很懶得研究ai，現在覺得一定要跟上ai浪潮欸XD
-
-但或許你每天在台東看天看海的人生遠離這些還是可以過的很快樂！我今年頻繁的因為工作壓力大出國玩，但後來發現其實人生追求的不過是安穩的生活即可！能在台東每天被山海包圍，想必幸福到不行！你真的是好早就領悟到要如何鬆散又幸福的生活，容我叫你一聲大師！！
-
-37歲了我們離不惑之年也越來越近了，但希望我們也還是能繼續享受最後幾年一些有惑的過程，有時候過程也是必要的，解惑之後回想起來也會更有趣，下次有上台北再相約喔！！生日快樂！！一切平安健康！啾啾
-
-`;
-
-msg.classList.add("fade");
+window.location.href='letter.html';
 
 }
 
