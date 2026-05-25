@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday</title>
 
 <style>
-
-body{
+html,body{
 margin:0;
+padding:0;
+width:100%;
+height:100%;
 overflow:hidden;
-background:url('cover.png') center center/cover no-repeat;
-height:100vh;
-font-family:sans-serif;
 }
 
-.overlay{
-width:100%;
-height:100vh;
-position:relative;
+body{
+background:url('cover.png') center center/cover no-repeat;
+}
+
+.hotspot{
+position:absolute;
+display:block;
+text-decoration:none;
 }
 
 .candle{
 position:absolute;
-top:42%;
+top:39%;
 left:50%;
 transform:translateX(-50%);
 width:120px;
-height:140px;
+height:150px;
 cursor:pointer;
 }
 
 .flame{
-width:28px;
-height:28px;
+width:30px;
+height:30px;
 background:#ffd65c;
 border-radius:50%;
 margin:auto;
@@ -53,114 +55,57 @@ position:absolute;
 top:63%;
 width:100%;
 text-align:center;
-font-size:30px;
-color:white;
+font-size:34px;
+color:#ffe58a;
 opacity:0;
 transition:1s;
 font-family:cursive;
+text-shadow:0 2px 8px rgba(0,0,0,0.4);
 }
 
-#typing{
-position:absolute;
-top:71%;
-width:100%;
-text-align:center;
-font-size:34px;
-color:white;
-font-family:cursive;
+/* 三個圖片按鈕的位置 */
+.mountain{
+left:5%;
+bottom:12%;
+width:28%;
+height:18%;
 }
 
-.icons{
-position:absolute;
-bottom:7%;
-width:100%;
-display:flex;
-justify-content:center;
-gap:50px;
-font-size:56px;
+.wave{
+left:36%;
+bottom:12%;
+width:28%;
+height:18%;
 }
 
-.icons a{
-text-decoration:none;
+.surf{
+right:5%;
+bottom:12%;
+width:28%;
+height:18%;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
-
 <div class="candle" onclick="blowCandle()">
 <div class="flame" id="flame"></div>
 </div>
 
-<div id="wish">
-wish fulfilled ✨
-</div>
+<div id="wish">wish fulfilled ✨</div>
 
-<div id="typing"></div>
+<a class="hotspot mountain" href="https://www.instagram.com/reel/DWqtMLfAIy0/?igsh=NWs3ZmU4OG5rbGdn"></a>
 
-<div class="icons">
+<a class="hotspot wave" href="https://www.google.com/search?q=生命靈數流年4課題"></a>
 
-<a href="https://www.instagram.com/reel/DWqtMLfAIy0/?igsh=NWs3ZmU4OG5rbGdn">
-⛰️
-</a>
-
-<a href="https://www.google.com/search?q=生命靈數流年4課題">
-🌊
-</a>
-
-<a href="message.html">
-🏄‍♀️
-</a>
-
-</div>
-
-</div>
+<a class="hotspot surf" href="message.html"></a>
 
 <script>
-
 function blowCandle(){
-
 document.getElementById("flame").style.display="none";
-
 document.getElementById("wish").style.opacity="1";
-
-typeText(
-"TODAY IS YOUR DAY…",
-"typing",
-90
-);
-
 }
-
-function typeText(text,id,speed){
-
-let i=0;
-
-const target=document.getElementById(id);
-
-target.innerHTML="";
-
-function typing(){
-
-if(i<text.length){
-
-target.innerHTML += text.charAt(i);
-
-i++;
-
-setTimeout(typing,speed);
-
-}
-
-}
-
-typing();
-
-}
-
 </script>
 
 </body>
